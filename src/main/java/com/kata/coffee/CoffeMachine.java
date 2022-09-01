@@ -17,8 +17,9 @@ public class CoffeMachine {
 		Matcher matcher = p.matcher(input);
 		if (matcher.find()) {
 			drinkCode = TypeDrink.valueOf(matcher.group(2).toUpperCase()).getDrinkCode();
-			if (!WITHOUT_VALUE.equals(matcher.group(3))) {
-				sugarCounter = matcher.group(3).substring(matcher.group(3).length() - 1);
+			String sugarCharacter=matcher.group(3);
+			if (!WITHOUT_VALUE.equals(sugarCharacter)) {
+				sugarCounter = sugarCharacter.substring(sugarCharacter.length() - 1);
 				withStick = "0";
 			}
 		}
